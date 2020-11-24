@@ -1,3 +1,5 @@
+// Definierar vilka libraries som kommer inkluderas i programmet.
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +13,7 @@ using System.Windows.Forms;
 namespace Calculator
 {
 
+//Här är själva strukturen av miniräknaren. De fyra räknesätten och knappar 0-9.
 
     public partial class CalculatorForm1 : Form
     {
@@ -132,7 +135,8 @@ namespace Calculator
             double first, second;
             double.TryParse(forsta, out first);
             double.TryParse(andra, out second);
-
+        
+        //Här används TryParse istället för parse. Om användaren skulle skriva in någonting som är inkompatibelt med double så skulle programmet krasha.
         
             if (operation == '+')
             {
@@ -171,7 +175,7 @@ namespace Calculator
                 {
                     Display.Text = "";
                 }
-
+                //Svaret som visas efter uträkningen är i String-format. Därför visas svaret som text.
             }
           
             
